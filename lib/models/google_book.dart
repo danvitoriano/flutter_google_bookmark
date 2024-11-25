@@ -36,4 +36,12 @@ class GoogleBook {
   String validateAuthors(Map<String, dynamic> map) => (map["volumeInfo"]["authors"] == null) ? "Autor desconhecido" : (map["volumeInfo"]["authors"] as List<dynamic>).map((e) => e).toString();
   validateDescription(Map<String, dynamic> map) => (map["volumeInfo"]["description"] == null) ? "Sem descrição" : map["volumeInfo"]["description"];
 
+  GoogleBook.fromJson(Map<String, dynamic> map){
+    id = map['id'];
+    title = map['title'];
+    authors = map['authors'];
+    description = map['description'];
+    thumbnailLink = map['thumbnailLink'];
+  }
+
 }
