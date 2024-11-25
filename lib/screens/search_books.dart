@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_google_bookmark/models/google_book.dart';
 import 'package:flutter_google_bookmark/screens/components/display_text.dart';
 import 'package:flutter_google_bookmark/screens/components/entry.dart';
+import 'package:flutter_google_bookmark/screens/components/primary_button.dart';
+import 'package:flutter_google_bookmark/screens/new_entry.dart';
 import 'package:flutter_google_bookmark/services/google_book_service.dart';
 import 'package:flutter_google_bookmark/theme.dart';
 
@@ -154,6 +156,17 @@ class _BooksList extends StatelessWidget {
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
+                                PrimaryButton(
+                                    text: "Adicionar livro",
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => NewEntry(
+                                                    googleBook:
+                                                        snapshot.data![index],
+                                                  )));
+                                    }),
                               ],
                             ),
                           ),
