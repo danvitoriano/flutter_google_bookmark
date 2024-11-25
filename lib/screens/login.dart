@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_google_bookmark/screens/components/primary_button.dart';
+import 'package:flutter_google_bookmark/screens/home.dart';
 import 'package:flutter_google_bookmark/screens/sign_up.dart';
 import 'package:flutter_google_bookmark/theme.dart';
 
@@ -80,7 +81,7 @@ class _LoginState extends State<Login> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const Text("home")));
+                                                Home()));
                                   },
                                   icon: Icons.arrow_forward_rounded),
                               Padding(
