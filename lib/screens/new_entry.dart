@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_google_bookmark/controllers/book_controller.dart';
 import 'package:flutter_google_bookmark/models/google_book.dart';
 import 'package:flutter_google_bookmark/screens/components/date_input.dart';
 import 'package:flutter_google_bookmark/screens/components/display_text.dart';
 import 'package:flutter_google_bookmark/screens/components/entry.dart';
 import 'package:flutter_google_bookmark/screens/components/primary_button.dart';
+import 'package:flutter_google_bookmark/screens/home.dart';
 import 'package:flutter_google_bookmark/theme.dart';
 
 class NewEntry extends StatefulWidget {
@@ -20,6 +22,7 @@ class _NewEntryState extends State<NewEntry> {
   final TextEditingController initialDateController = TextEditingController();
   final TextEditingController finalDateController = TextEditingController();
   final TextEditingController commentsController = TextEditingController();
+  final BookController bookController = BookController();
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +82,20 @@ class _NewEntryState extends State<NewEntry> {
                               padding: const EdgeInsets.only(bottom: 40.0),
                               child: PrimaryButton(
                                   text: "Adicionar",
-                                  onTap: () {}),
+                                  onTap: () {
+                                    bookController.addBook(
+                                        widget.googleBook,
+                                        initialDateController.text,
+                                        finalDateController.text,
+                                        commentsController.text);
+
+                                    Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => const Home()),
+                                      (_) => false,
+                                    );
+                                  }),
                             ),
                           ],
                         ),

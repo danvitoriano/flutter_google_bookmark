@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter_google_bookmark/models/personal_book.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
@@ -83,7 +85,6 @@ class PersonalBookDatabase {
   }
 
   Future<void> delete(PersonalBook book) async {
-
     print("DELETE");
 
     final Database database = await _getDatabase();
