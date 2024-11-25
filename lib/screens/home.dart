@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_google_bookmark/screens/components/display_text.dart';
 import 'package:flutter_google_bookmark/screens/components/floating.button.dart';
+import 'package:flutter_google_bookmark/screens/search_books.dart';
 import 'package:flutter_google_bookmark/theme.dart';
 
 class Home extends StatefulWidget {
@@ -63,7 +64,7 @@ class _EmptyHome extends StatelessWidget {
       ),
       FloatingButton(onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => Text("search books")));
+            MaterialPageRoute(builder: (context) => SearchBooks()));
       }),
     ]);
   }
