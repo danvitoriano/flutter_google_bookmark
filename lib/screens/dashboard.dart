@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_google_bookmark/screens/components/primary_button.dart';
+import 'package:flutter_google_bookmark/screens/login.dart';
 import 'package:flutter_google_bookmark/theme.dart';
 
 class Dashboard extends StatelessWidget {
@@ -48,7 +49,7 @@ class Dashboard extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Text("data")
+                          builder: (context) => Login()
                         ));
                   },
                 ),
